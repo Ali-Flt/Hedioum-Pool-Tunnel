@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/config"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/internal/egress"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/internal/ingress"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/egress"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/ingress"
 )
 
 // AppVersion defines the current build version for the self-updater

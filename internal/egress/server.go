@@ -10,9 +10,9 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/hashicorp/yamux"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/config"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/internal/mimic"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/internal/obfuscate"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/mimic"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/obfuscate"
 )
 
 const (
