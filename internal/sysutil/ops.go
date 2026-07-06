@@ -15,7 +15,7 @@ const (
 	binaryPath = "/usr/local/bin/hedioum-tunnel"
 	backupPath = "/usr/local/bin/hedioum-tunnel.bak"
 	tmpPath    = "/tmp/hedioum-tunnel-new"
-	repoAPI    = "https://api.github.com/repos/hedioum/Hedioum-Pool-Tunnel/releases/latest"
+	repoAPI    = "https://api.github.com/repos/Ali-Flt/Hedioum-Pool-Tunnel/releases/latest"
 	proxyURL   = "https://ghp.ci/"
 )
 

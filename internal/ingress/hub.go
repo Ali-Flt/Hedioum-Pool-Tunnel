@@ -10,10 +10,10 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/hashicorp/yamux"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/config"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/internal/mimic"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/internal/obfuscate"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/internal/pool"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/mimic"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/obfuscate"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/pool"
 )
 
 // StartIranHub initializes the SOCKS5 listeners and dynamically scaling connection

@@ -125,13 +125,13 @@ fi
 echo "[*] Fetching the latest release from GitHub..."
 
 # Match exactly target asset using double quotes to avoid partial matches
-LATEST_URL=$(curl -s https://api.github.com/repos/hedioum/Hedioum-Pool-Tunnel/releases/latest | grep "browser_download_url" | grep "$TARGET_ASSET\"" | cut -d '"' -f 4)
+LATEST_URL=$(curl -s https://api.github.com/repos/Ali-Flt/Hedioum-Pool-Tunnel/releases/latest | grep "browser_download_url" | grep "$TARGET_ASSET\"" | cut -d '"' -f 4)
 
 # Fallback URLs in case GitHub API is rate-limited or blocked
 if [ -z "$LATEST_URL" ]; then
     echo "[-] GitHub API rate-limited or blocked. Falling back to static release link..."
     FALLBACK_VERSION="v0.3.2"
-    LATEST_URL="https://github.com/hedioum/Hedioum-Pool-Tunnel/releases/download/${FALLBACK_VERSION}/${TARGET_ASSET}"
+    LATEST_URL="https://github.com/Ali-Flt/Hedioum-Pool-Tunnel/releases/download/${FALLBACK_VERSION}/${TARGET_ASSET}"
 fi
 
 URL_PROXY="https://ghp.ci/$LATEST_URL"

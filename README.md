@@ -26,14 +26,14 @@ You can deploy the Hedioum daemon on any Ubuntu/Debian server using our 1-click 
 ### Step 1: Deploy Foreign Node (Egress)
 Run the following command on your foreign VPS:
 
-    bash <(curl -s https://raw.githubusercontent.com/hedioum/Hedioum-Pool-Tunnel/main/install.sh)
+    bash <(curl -s https://raw.githubusercontent.com/Ali-Flt/Hedioum-Pool-Tunnel/main/install.sh)
 
 Follow the interactive wizard. Copy the generated Auth Token.
 
 ### Step 2: Deploy Iran Node (Hub)
 Run the same command on your Iran VPS:
 
-    bash <(curl -s https://raw.githubusercontent.com/hedioum/Hedioum-Pool-Tunnel/main/install.sh)
+    bash <(curl -s https://raw.githubusercontent.com/Ali-Flt/Hedioum-Pool-Tunnel/main/install.sh)
 
 Select "Iran Node" and add your Foreign Node. You will be prompted to define your DPI evasion parameters (Bandwidth Limits & Jitter) during setup.
 
@@ -70,7 +70,7 @@ To manage servers, view live connection status, or perform lifecycle operations,
 
 If you wish to compile the static binary manually:
 
-    git clone https://github.com/hedioum/Hedioum-Pool-Tunnel.git
+    git clone https://github.com/Ali-Flt/Hedioum-Pool-Tunnel.git
     cd Hedioum-Pool-Tunnel
     make build-linux
 

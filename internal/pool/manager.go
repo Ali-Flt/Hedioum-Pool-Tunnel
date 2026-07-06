@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/hashicorp/yamux"
-	"github.com/hedioum/Hedioum-Pool-Tunnel/config"
+	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
 )
 
 const (
