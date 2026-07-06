@@ -130,7 +130,7 @@ LATEST_URL=$(curl -s https://api.github.com/repos/Ali-Flt/Hedioum-Pool-Tunnel/re
 # Fallback URLs in case GitHub API is rate-limited or blocked
 if [ -z "$LATEST_URL" ]; then
     echo "[-] GitHub API rate-limited or blocked. Falling back to static release link..."
-    FALLBACK_VERSION="v0.3.2"
+    FALLBACK_VERSION="v0.4.0"
     LATEST_URL="https://github.com/Ali-Flt/Hedioum-Pool-Tunnel/releases/download/${FALLBACK_VERSION}/${TARGET_ASSET}"
 fi
 
