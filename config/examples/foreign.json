@@ -1,0 +1,5 @@
+{
+  "role": "foreign",
+  "foreign_listen_port": 22,
+  "auth_token": "REPLACE_ME_run_openssl_rand_hex_16"
+}
