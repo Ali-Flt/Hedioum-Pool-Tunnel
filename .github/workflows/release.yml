@@ -1,0 +1,49 @@
+name: Release
+
+# Cut a release by pushing a version tag:
+#   git tag v0.4.1 && git push origin v0.4.1
+# This builds the static binaries and attaches them to the GitHub release.
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Vet (release gate)
+        run: go vet ./...
+
+      # Direct build (not `make all`) so the release is reproducible against the
+      # committed go.sum and never runs `go mod tidy`. Flags mirror the Makefile.
+      - name: Build static binaries (amd64 + arm64)
+        run: |
+          mkdir -p bin
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o bin/hedioum-tunnel ./cmd/hedioum
+          CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -ldflags="-s -w" -o bin/hedioum-tunnel-arm64 ./cmd/hedioum
+
+      # Create the release for this tag (or attach to a pre-existing one), uploading
+      # both assets under the exact names install.sh and the self-updater expect.
+      - name: Publish release with binaries
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" \
+            bin/hedioum-tunnel bin/hedioum-tunnel-arm64 \
+            --title "$TAG" --generate-notes \
+          || gh release upload "$TAG" \
+            bin/hedioum-tunnel bin/hedioum-tunnel-arm64 --clobber
