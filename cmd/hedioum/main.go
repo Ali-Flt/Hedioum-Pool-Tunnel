@@ -6,10 +6,10 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/fatih/color"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/egress"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/ingress"
+	"github.com/fatih/color"
 )
 
 // AppVersion defines the current build version for the self-updater
