@@ -1,0 +1,16 @@
+{
+  "role": "iran",
+  "foreign_nodes": [
+    {
+      "alias": "DE-Frankfurt-01",
+      "target_ip": "203.0.113.10",
+      "target_port": 22,
+      "local_socks_port": 40001,
+      "min_connections": 10,
+      "max_connections": 20,
+      "bandwidth_limit_mbps": 8,
+      "bandwidth_jitter_mbps": 2,
+      "auth_token": "MUST_MATCH_THE_FOREIGN_NODE_TOKEN"
+    }
+  ]
+}

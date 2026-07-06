@@ -37,6 +37,22 @@ Run the same command on your Iran VPS:
 
 Select "Iran Node" and add your Foreign Node. You will be prompted to define your DPI evasion parameters (Bandwidth Limits & Jitter) during setup.
 
+### Unattended / Automated Installation
+For scripted deployments (Ansible, cloud-init, image baking), skip the interactive wizard by passing a config file.
+The file uses the exact same schema the daemon persists to `/etc/hedioum/hedioum.json`.
+Ready-to-edit templates live in [`config/examples/`](config/examples/).
+
+    # Validate your config first (no root, no changes made):
+    bash install.sh --config ./hedioum.json --validate-only
+
+    # Provision headlessly (installs binary + service, then starts the daemon):
+    sudo bash install.sh --config ./hedioum.json
+    # or: sudo HEDIOUM_CONFIG=./hedioum.json bash install.sh
+
+Notes:
+- Generate the shared auth token once with `openssl rand -hex 16` and use it in both the foreign and Iran configs.
+- **Foreign nodes bind port 22**, so free it before an unattended install (relocate SSH, e.g. to 2022). The interactive wizard offers to do this move for you; the unattended path does not touch your SSH config.
+
 ## ⚙️ Management Dashboard
 
 To manage servers, view live connection status, or perform lifecycle operations, run the interactive dashboard from your terminal at any time:
