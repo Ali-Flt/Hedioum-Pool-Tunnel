@@ -9,8 +9,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/hashicorp/yamux"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
+	"github.com/hashicorp/yamux"
 )
 
 const (

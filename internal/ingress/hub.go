@@ -6,14 +6,15 @@ import (
 	"io"
 	"math/rand"
 	"net"
+	"strconv"
 	"time"
 
-	"github.com/fatih/color"
-	"github.com/hashicorp/yamux"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/mimic"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/obfuscate"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/pool"
+	"github.com/fatih/color"
+	"github.com/hashicorp/yamux"
 )
 
 // StartIranHub initializes the SOCKS5 listeners and dynamically scaling connection
@@ -38,7 +39,7 @@ func StartIranHub(cfg *config.AppConfig) {
 
 		// 2. Define the dialing and physical handshake procedure for this foreign node
 		dialerFunc := func() (*yamux.Session, error) {
-			targetAddr := fmt.Sprintf("%s:%d", nodeCopy.TargetIP, nodeCopy.TargetPort)
+			targetAddr := net.JoinHostPort(nodeCopy.TargetIP, strconv.Itoa(nodeCopy.TargetPort))
 
 			// Dial the physical TCP connection
 			conn, err := net.DialTimeout("tcp", targetAddr, 5*time.Second)

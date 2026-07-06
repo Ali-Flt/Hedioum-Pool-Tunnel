@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/fatih/color"
-	"github.com/hashicorp/yamux"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/mimic"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/obfuscate"
+	"github.com/fatih/color"
+	"github.com/hashicorp/yamux"
 )
 
 const (

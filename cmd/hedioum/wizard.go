@@ -9,9 +9,9 @@ import (
 	"strings"
 
 	"github.com/AlecAivazis/survey/v2"
-	"github.com/fatih/color"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/config"
 	"github.com/Ali-Flt/Hedioum-Pool-Tunnel/internal/sysutil"
+	"github.com/fatih/color"
 )
 
 func handleReset() {
